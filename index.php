@@ -7,7 +7,7 @@
 
 <body>
     <?php
-    include "header.php";
+    include "header.html";
     ?>
 
     <h2>MAKASIH YA ALLAH</h2>
