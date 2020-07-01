@@ -12,6 +12,8 @@
     include "header.html"
     ?>
     <p>nested query</p>
+    <p>pengertian <a href="https://www.geeksforgeeks.org/nested-queries-in-sql/">kli</a>k</p>
+
     <p>menggunakan IN (dimana parameter yang digunakan dari tabel lain )</p>
     <table class="table">
         <thead class="thead-light">
@@ -85,7 +87,6 @@
             ?>
                 <tr>
                     <td><?php echo $d['client_name']; ?></td>
-
                 </tr>
             <?php
             }
