@@ -12,7 +12,8 @@
     <?php
     include "header.html"
     ?>
-    <p>DELETE ini menggunakan SET ON DELETE SET NULL </p>
+    <p>DELETE ini menggunakan SET ON DELETE SET CASCADE </p>
+    <p>pengertian jika cascade maka semua yang row dihapus</p>
     <div class="container">
         <p>tabel branch</p>
         <div class="row">
@@ -46,26 +47,24 @@
         </div>
         <div></div>
         <br>
-        <p>tabel employee</p>
+        <p>tabel branch supplier</p>
         <table class="table table-sm col-sm-6">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">emp_id </th>
-                    <th scope="col">fist_name </th>
-                    <th scope="col">lst_name </th>
-                    <th scope="col">super_id </th>
+                    <th scope="col">branch_id </th>
+                    <th scope="col">supplier_name</th>
+                    <th scope="col">supply_type </th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $data = mysqli_query($koneksi, "SELECT * FROM employee ");
+                $data = mysqli_query($koneksi, "SELECT * FROM branch_supplier ");
                 while ($d = mysqli_fetch_array($data)) {
                 ?>
                     <tr>
-                        <td><?php echo $d['emp_id']; ?></td>
-                        <td><?php echo $d['firt_name']; ?></td>
-                        <td><?php echo $d['last_name']; ?></td>
-                        <td><?php echo $d['super_id']; ?></td>
+                        <td><?php echo $d['branch_id']; ?></td>
+                        <td><?php echo $d['supplier_name']; ?></td>
+                        <td><?php echo $d['supply_type']; ?></td>
                     </tr>
                 <?php
                 }
@@ -78,13 +77,13 @@
 
     <div class="container">
         <!-- function delete -->
-        <p>DELETE ini menggunakan null || jika ingin menggukan gunakan silahkan dibuka komentarnya </p>
-
-        <!-- <div class="row">
+        <p>DELETE ini menggunakan cascade || jika ingin menggukan gunakan silahkan dibuka komentarnya </p>
+        <!-- 
+        <div class="row">
             <?php
-            //  $delete = mysqli_query($koneksi, "DELETE FROM employee WHERE emp_id = 102")
+            // $delete_tes = mysqli_query($koneksi, "DELETE FROM branch WHERE branch_id = 2");
             ?>
-            <p> <input type="submit" class="btn btn-primary"><?php $delete ?>hdelete</input> data ini menghapus employe = emp_id dan branch=mgr_id ikut karena foreigh key </p>
+            <p> <button type="button" class="btn btn-primary"><?php $delete_tes ?>delete</button> data ini menghapus employe = emp_id dan branch=mgr_id ikut karena foreigh key </p>
         </div> -->
         <!-- function delete -->
     </div>
